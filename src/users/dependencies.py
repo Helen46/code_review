@@ -37,7 +37,8 @@ async def get_current_superuser(current_user: UserModel = Depends(get_current_us
             status_code=status.HTTP_403_FORBIDDEN, detail="Not enough privileges")
     return current_user
 
-
+# не понимаю в чем разница текущего и активного пользователя
+# если пользователь текущий значет он активен, наверное это лшняя проверка
 async def get_current_active_user(current_user: UserModel = Depends(get_current_user)) -> UserModel:
     if not current_user.is_active:
         raise HTTPException(

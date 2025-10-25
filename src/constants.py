@@ -1,5 +1,7 @@
+#не понятно для чего этот импорт, если он не используется
 from enum import Enum
 
+# и вообще не понимаю для чего это
 DB_NAMING_CONVENTION = {
     "ix": "%(column_0_label)s_idx",
     "uq": "%(table_name)s_%(column_0_name)s_key",

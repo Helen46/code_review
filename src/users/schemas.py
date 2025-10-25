@@ -30,6 +30,8 @@ class User(UserBase):
     is_verified: bool
     is_superuser: bool
 
+    # можно использовать 
+
     class Config:
         from_attributes = True
 

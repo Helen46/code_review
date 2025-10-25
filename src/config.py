@@ -2,6 +2,7 @@ from typing import List, Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# непонятный импорт
 from .constants import Environment
 
 
@@ -24,7 +25,7 @@ class Settings(BaseSettings):
     TEST_POSTGRES_PASSWORD: str
     TEST_POSTGRES_HOST: str
     TEST_POSTGRES_PORT: str
-
+# не понимаю зачем вторая база данных, для тестирования?
     @property
     def TEST_DATABASE_URL(self):
         return f"postgresql+asyncpg://{self.TEST_POSTGRES_USER}:{self.TEST_POSTGRES_PASSWORD}@{self.TEST_POSTGRES_HOST}:{self.TEST_POSTGRES_PORT}/{self.TEST_POSTGRES_DB}"

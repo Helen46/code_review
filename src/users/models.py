@@ -6,9 +6,11 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql import func
 
+#лучше не использовать относительные импорты
+#from src.database import Base
 from ..database import Base
 
-
+#модель таблицы пользователя все поля понятны
 class UserModel(Base):
     __tablename__ = 'user'
 
@@ -21,7 +23,8 @@ class UserModel(Base):
     is_verified: Mapped[bool] = mapped_column(default=False)
     is_superuser: Mapped[bool] = mapped_column(default=False)
 
-
+#модель для записи сессий пользователя с внешним ключом user_id и удалением типа CASCADE
+#наверное для отслеживания посещений
 class RefreshSessionModel(Base):
     __tablename__ = 'refresh_session'
 
