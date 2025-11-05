@@ -22,6 +22,7 @@ class AuthService:
             days=settings.REFRESH_TOKEN_EXPIRE_DAYS)
         refresh_token = cls._create_refresh_token()
 
+        # повторяется много раз в коде, можно вынести в зависимоти
         async with async_session_maker() as session:
             await RefreshSessionDAO.add(
                 session,

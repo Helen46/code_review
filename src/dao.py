@@ -1,3 +1,4 @@
+# здесь более или менее понятно как в нашем проекте
 from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 
 from sqlalchemy import delete, insert, select, update

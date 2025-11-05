@@ -1,3 +1,5 @@
+# здесь более или менее понятно, как в нашем проекте,
+# только есть зависимость просто пользователь или суперпользователь
 from typing import List, Optional
 import uuid
 
@@ -15,7 +17,7 @@ from ..config import settings
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
 user_router = APIRouter(prefix="/users", tags=["user"])
 
-
+# можно было разделить на два файла и не перегружать название декоратора
 @auth_router.post("/register", status_code=status.HTTP_201_CREATED)
 async def register(
     user: UserCreate

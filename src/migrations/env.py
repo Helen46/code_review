@@ -9,6 +9,7 @@ from alembic import context
 
 sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 
+#можно было добавить только одну модель
 from src.users.models import UserModel, RefreshSessionModel
 from src.database import Base
 from src.config import settings
